@@ -1,0 +1,44 @@
+pipelines {
+  agent {
+    node {
+      label 'NODEJS'
+    }
+  }
+  
+  stages {
+    
+    stage ('Complie') {
+      steps {
+        echo "Compilation is Done."
+      }
+    }
+    
+    stage ('Code Quality') {
+      steps {
+        echo 'Code Quailty'
+      }
+    }
+    stage ('Checking the Lint') {
+      steps {
+        echo Lint Check OKay
+      }
+    }
+  stage ('Unit Test') {
+    steps {
+      echo 'unit Test'
+    }
+  }
+  
+  stage ('Preparing Artifacts') {
+    steps {
+      echo ' Artifacts are prepared'
+    }
+   }
+  
+  stage ('Publishing Artifacts') {
+    steps {
+      echo 'Publishing Artifacts'
+    }
+  }
+  }
+}
