@@ -1,50 +1,52 @@
-pipelines {
+pipeline {
+
   agent {
     node {
       label 'NODEJS'
     }
   }
-  
+
   stages {
-    
-    stage ('Complie') {
+
+    stage('Compile') {
       steps {
-        echo "Compilation is Done."
+        echo 'Nothing to do for compilation'
       }
     }
-    
-    stage ('Code Quality') {
+
+    stage('Check Code Quality') {
       steps {
-        echo 'Code Quailty'
+        echo 'Code Quality'
       }
     }
-    stage ('Checking the Lint') {
+
+    stage('Lint Checks') {
       steps {
-        echo Lint Check OKay
+        echo 'Lint Checks'
       }
     }
-  stage ('Unit Test') {
-    steps {
-      echo 'unit Test'
+
+    stage('Unit Tests') {
+      steps {
+        echo 'Unit tests'
+      }
     }
-  }
-  
-  stage ('Preparing Artifacts') {
-    steps {
-      sh '''
-      cd static
-      zip -r frontend.zip *
-      '''
+
+    stage('Prepare Artifact') {
+      steps {
+        sh '''
+          cd static
+          zip -r frontend.zip * 
+        '''
+      }
     }
-   }
-  
-  stage ('Publishing artifacts') {
-    steps {
-      echo 'Publishing Artifacts'
+
+    stage('Publish Artifacts') {
+      steps {
+        echo 'Publish Artifacts'
+      }
     }
+
   }
-  }
+
 }
-
-
-
