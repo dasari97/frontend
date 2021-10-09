@@ -38,10 +38,13 @@ pipelines {
     }
    }
   
-  stage ('Publishing Artifacts') {
+  stage ('Publishing artifacts') {
     steps {
       echo 'Publishing Artifacts'
     }
   }
   }
 }
+
+
+
