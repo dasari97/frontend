@@ -31,7 +31,10 @@ pipelines {
   
   stage ('Preparing Artifacts') {
     steps {
-      echo ' Artifacts are prepared'
+      sh '''
+      cd static
+      zip -r frontend.zip *
+      '''
     }
    }
   
