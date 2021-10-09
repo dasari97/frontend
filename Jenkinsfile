@@ -1,5 +1,4 @@
 pipeline {
-
   agent {
     node {
       label 'NODEJS'
@@ -7,46 +6,11 @@ pipeline {
   }
 
   stages {
-
-    stage('Compile') {
+    
+    stage ('One') {
       steps {
-        echo 'Nothing to do for compilation'
+        sh 'echo Hello World '
       }
     }
-
-    stage('Check Code Quality') {
-      steps {
-        echo 'Code Quality'
-      }
-    }
-
-    stage('Lint Checks') {
-      steps {
-        echo 'Lint Checks'
-      }
-    }
-
-    stage('Unit Tests') {
-      steps {
-        echo 'Unit tests'
-      }
-    }
-
-    stage('Prepare Artifact') {
-      steps {
-        sh '''
-          cd static
-          zip -r frontend.zip * 
-        '''
-      }
-    }
-
-    stage('Publish Artifacts') {
-      steps {
-        echo 'Publish Artifacts'
-      }
-    }
-
   }
-
 }
