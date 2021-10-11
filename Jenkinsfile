@@ -1,3 +1,3 @@
 @Library('roboshop') _
 
-Roboshop('NODEJS')
+Roboshop('NODEJS' , 'frontend')
