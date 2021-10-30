@@ -5,4 +5,7 @@ module "frontend" {
     od_ins = var.od_ins
     instance_type = var.instance_type
     component   = "frontend"
+    port        = 80
+    is_internal = "false"
+    priority    = 300
 }
