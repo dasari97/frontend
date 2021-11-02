@@ -8,4 +8,5 @@ module "frontend" {
     port        = 80
     is_internal = "false"
     priority    = 300
+    APP_VERSION = var.APP_VERSION
 }
