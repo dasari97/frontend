@@ -1,0 +1,23 @@
+trigger:
+  branches:
+    include: [ "*" ]
+  #tags:
+  #  include: [ "*" ]
+
+pool:
+  name: WS
+
+resources:
+  repositories:
+  - repository: azureCI
+    type: git
+    name: azureCI
+    
+variables:
+  COMPONENT: frontend
+    
+stages: 
+- template: "codecheck.yml@azureCI"
+- template: "codeTest.yml@azureCI"
+- template: "frontend-az.yml@azureCI"
+  
