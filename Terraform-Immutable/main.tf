@@ -3,8 +3,8 @@ module "frontend" {
     env = var.env
     instance_type = var.instance_type
     component   = "frontend"
-    port        = 8080
-    is_internal = "true"
+    port        = 80
+    is_internal = "false"
     priority    = 300
     APP_VERSION = var.APP_VERSION
     max_size    = var.max_size
